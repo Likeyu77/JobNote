@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux'
 import JobInfo from './JobInfo'
 import moment from 'moment'
 import { deleteJob, setEditJob } from '../features/job/jobSlice'
-import { AiOutlineEdit, AiOutlineDelete } from 'react-icons/ai'
+
 
 const Job = ({
   _id,

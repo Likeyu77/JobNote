@@ -51,7 +51,6 @@ const AddJob = () => {
     if (!isEditing) {
       dispatch(handleChange({ name: 'jobLocation', value: user.location }))
     }
-
   }, [])
   return (
     <Wrapper>
