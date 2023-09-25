@@ -24,7 +24,18 @@ const SearchContainer = () => {
     dispatch(clearFilters())
   }
 
-  const debounce = () => {
+  // const debounce = () => {
+  //   let timeoutID
+  //   return (e) => {
+  //     setLocalSearch(e.target.value)
+  //     clearTimeout(timeoutID)
+  //     timeoutID = setTimeout(() => {
+  //       dispatch(handleChange({ name: e.target.name, value: e.target.value }))
+  //     }, 1000)
+  //   }
+  // }
+
+  const optimizedDebounce = useMemo(() => {
     let timeoutID
     return (e) => {
       setLocalSearch(e.target.value)
@@ -33,9 +44,7 @@ const SearchContainer = () => {
         dispatch(handleChange({ name: e.target.name, value: e.target.value }))
       }, 1000)
     }
-  }
-
-  const optimizedDebounce = useMemo(() => debounce(), [])
+  }, [dispatch])
 
   return (
     <Wrapper>
